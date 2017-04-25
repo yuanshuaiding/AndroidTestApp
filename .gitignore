@@ -10,3 +10,6 @@
 /app/build
 /app/src/test
 /app/src/androidTest
+gradle.properties
+gradlew
+gradlew.bat
