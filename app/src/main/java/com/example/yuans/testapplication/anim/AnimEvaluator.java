@@ -4,7 +4,7 @@ import android.animation.TypeEvaluator;
 import android.util.Log;
 
 /**
- * 动画估值器
+ * 自定义动画估值器
  * Created by yuans on 2017/3/2.
  */
 
