@@ -16,6 +16,9 @@ import com.example.yuans.testapplication.anim.AnimEvaluator;
 import com.example.yuans.testapplication.anim.AnimPath;
 import com.example.yuans.testapplication.anim.AnimPoint;
 
+/**
+ * 类注释
+ */
 public class ScrollingActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
@@ -41,6 +44,7 @@ public class ScrollingActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        //com.eric.kotlin.demo.HelloKotlinKt.main(new String[]{"eric"});
         //startAnimation();
     }
 

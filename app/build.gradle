@@ -26,6 +26,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':kotlinlib')
     compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
     compile "com.android.support:design:$rootProject.ext.supportLibVersion"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -37,6 +38,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.5.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-	//调试阶段可以通过网页查看数据库和sharedPreferences的插件（Genymotion：adb forward tcp:8080 tcp:8080、http://localhost:8080/）
+    //调试阶段可以通过网页查看数据库和sharedPreferences的插件（Genymotion：adb forward tcp:8080 tcp:8080、http://localhost:8080/）
     debugCompile 'com.amitshekhar.android:debug-db:1.0.0'
 }

@@ -8,5 +8,6 @@ build/
 gradle.properties
 gradlew
 gradlew.bat
-app/libs/
 gradle/
+.gitignore
+
