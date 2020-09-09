@@ -1,20 +1,22 @@
 package com.example.yuans.testapplication;
 
 import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.example.yuans.testapplication.anim.AnimEvaluator;
 import com.example.yuans.testapplication.anim.AnimPath;
 import com.example.yuans.testapplication.anim.AnimPoint;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 /**
  * 类注释
@@ -64,9 +66,6 @@ public class ScrollingActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                //ObjectAnimator.ofFloat(fab,"alpha",0,1,0,1).setDuration(2000).start();
-                fab.setImageResource(0);
-                fab.animate().scaleXBy(50).scaleYBy(50).start();
                 startActivity(new Intent(ScrollingActivity.this, DataBindActivity.class));
             }
 

@@ -2,17 +2,16 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
-    //开启databinding
+    //����databinding
     dataBinding {
         enabled = true
     }
 
     defaultConfig {
         applicationId "com.example.yuans.testapplication"
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -24,20 +23,27 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        //��Щ�������������gson2.7�����а汾��ͻ��ǿ��ʹ��gson2.8.0�汾
+        force 'com.google.code.gson:gson:2.8.0'
+    }
+}
+
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':kotlinlib')
-    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
-    compile "com.android.support:design:$rootProject.ext.supportLibVersion"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'io.reactivex.rxjava2:rxjava:2.0.7'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'com.squareup.retrofit2:retrofit:2.2.0'
-    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
-    compile 'com.jakewharton:butterknife:8.5.1'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-    //调试阶段可以通过网页查看数据库和sharedPreferences的插件（Genymotion：adb forward tcp:8080 tcp:8080、http://localhost:8080/）
-    debugCompile 'com.amitshekhar.android:debug-db:1.0.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':kotlinlib')
+    implementation "androidx.appcompat:appcompat:1.2.0"
+    implementation "com.google.android.material:material:1.2.1"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    //���Խ׶ο���ͨ����ҳ�鿴���ݿ��sharedPreferences�Ĳ����Genymotion��adb forward tcp:8080 tcp:8080��http://localhost:8080/��
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.0'
 }
